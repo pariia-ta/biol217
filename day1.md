@@ -1,4 +1,17 @@
 # what I learned today
+```
+pwd #current directory
+```
+```
+mkdir #create a new directory
+```
+```
+rm -r #remove a directory
+```
 
-testing to sync
-mkdir
+cd #change a directory
+
+'''
+cd ../ #one directory up
+
+'''
