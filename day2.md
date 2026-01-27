@@ -106,7 +106,12 @@ megahit_toolkit contig2fastg 99 final.contigs.fa > final.contigs.fastg
 6. Visualize the file (contigs) in Bandage
 ![Assembly graph visualized in Bandage](bandage_graph)
 
+###Question
 
+Attach the figure you generated and explain briefly in your own words what you can see?
+Each colored line represents a contig in the assembly graph. The connections between lines indicate overlaps between sequences, showing how different contigs are linked.
+At the top of the graph, there are fewer and longer contigs, which likely represent well-assembled regions with high coverage.
+the bottom part of the graph contains many short, dense, and fragmented contigs, suggesting repetitive regions, low coverage areas.
 
 
 
