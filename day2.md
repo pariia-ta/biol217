@@ -61,16 +61,27 @@ sbatch fastqc.sh
 
 ### Preprocess the raw sequencing reads with Fastp
 1. again creating a script in VScode:
+
 #!/bin/bash
+
 #SBATCH --job-name=fastp
+
 #SBATCH --output=fastp.out
+
 #SBATCH --error=fastp.err
+
 #SBATCH --nodes=1
+
 #SBATCH --ntasks-per-node=1
+
 #SBATCH --cpus-per-task=12
+
 #SBATCH --mem=32G
+
 #SBATCH --partition=base
+
 #SBATCH --time=03:00:00
+
 #SBATCH --reservation=biol217
 
 #load necessary modules
@@ -86,7 +97,9 @@ cd $WORK/metagenomics
 mkdir -p fastp_out
 
 fastp -i 0_raw_reads/BGR_130305_mapped_R1.fastq.gz -I 0_raw_reads/BGR_130305_mapped_R2.fastq.gz -o fastp_out/BGR_130305_mapped_R1.fastq.gz -O fastp_out/BGR_130305_mapped_R2.fastq.gz -t 6 -q 20 -h fastp_out/BGR_130305_mapped_R1.html -R BGR_130305_mapped_R2
+
 fastp -i 0_raw_reads/BGR_130527_mapped_R1.fastq.gz -I 0_raw_reads/BGR_130527_mapped_R2.fastq.gz -o fastp_out/BGR_130527_mapped_R1.fastq.gz -O fastp_out/BGR_130527_mapped_R2.fastq.gz -t 6 -q 20 -h fastp_out/BGR_130527_mapped_R1.html -R BGR_130527_mapped_R2
+
 fastp -i 0_raw_reads/BGR_130708_mapped_R1.fastq.gz -I 0_raw_reads/BGR_130708_mapped_R2.fastq.gz -o fastp_out/BGR_130708_mapped_R1.fastq.gz -O fastp_out/BGR_130708_mapped_R2.fastq.gz -t 6 -q 20 -h fastp_out/BGR_130708_mapped_R1.html -R BGR_130708_mapped_R2
 
 2. submit the file in the terminal, using:
