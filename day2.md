@@ -1,4 +1,5 @@
-What I did today:
+### What I did today:
+
 
 ### Quality Control with FastQC
 1. activating the environment:
@@ -10,21 +11,35 @@ micromamba activate 00_anvio
 cd $WORK
 ```
 3. Creating a script in VScode with the template.sh file example:
+
 #!/bin/bash
+
 #SBATCH --job-name=fastqc
+
 #SBATCH --output=fastqc.out
+
 #SBATCH --error=fastqc.err
+
 #SBATCH --nodes=1
+
 #SBATCH --ntasks-per-node=1
+
 #SBATCH --cpus-per-task=12
+
 #SBATCH --mem=32G
+
 #SBATCH --partition=base
+
 #SBATCH --time=03:00:00
+
 #SBATCH --reservation=biol217
 
 #load necessary modules
+
 module load gcc12-env/12.1.0
+
 module load micromamba
+
 eval "$(micromamba shell hook --shell=bash)"
 export MAMBA_ROOT_PREFIX=$WORK/.micromamba
 
