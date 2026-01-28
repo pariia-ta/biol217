@@ -112,6 +112,42 @@ sbatch fastp.sh
 
 1. creating a script in VScode:
 
+#!/bin/bash
+
+#SBATCH --job-name=assemble
+
+#SBATCH --output=assemble.out
+
+#SBATCH --error=assemble.err
+
+#SBATCH --nodes=1
+
+#SBATCH --ntasks-per-node=1
+
+#SBATCH --cpus-per-task=12
+
+#SBATCH --mem=32G
+
+#SBATCH --partition=base
+
+#SBATCH --time=03:00:00
+
+#SBATCH --reservation=biol217
+
+
+#load necessary modules
+module load gcc12-env/12.1.0
+module load micromamba
+eval "$(micromamba shell hook --shell=bash)"
+export MAMBA_ROOT_PREFIX=$WORK/.micromamba
+
+micromamba activate 00_anvio 
+
+
+cd $WORK/metagenomics
+
+
+megahit -1 fastp_out/BGR_130305_mapped_R1.fastq.gz -1 fastp_out/BGR_130527_mapped_R1.fastq.gz -1 fastp_out/BGR_130708_mapped_R1.fastq.gz -2 fastp_out/BGR_130305_mapped_R2.fastq.gz -2 fastp_out/BGR_130527_mapped_R2.fastq.gz -2 fastp_out/BGR_130708_mapped_R2.fastq.gz -o megahit --min-contig-len 1000 --presets meta-large -m 0.85 -t 12        
 
 
 
