@@ -38,20 +38,22 @@ The steps that we followed:
 
       -  Now, we mapping reads onto contigs with bowtie2 with the .sam result (Sequence Alignment Map)
 
-      ```
+
+       ```
        bowtie2 -1 BGR_130305_mapped_R1.fastq.gz -2 BGR_130305_mapped_R2.fastq.gz -S BGR_130305.sam -x ../index_output --very-fast 
-bowtie2 -1 BGR_130527_mapped_R1.fastq.gz -2 BGR_130527_mapped_R2.fastq.gz -S BGR_130527.sam -x ../index_output --very-fast 
-bowtie2 -1 BGR_130708_mapped_R1.fastq.gz -2 BGR_130708_mapped_R2.fastq.gz -S BGR_130708.sam -x ../index_output --very-fast 
-```
+       bowtie2 -1 BGR_130527_mapped_R1.fastq.gz -2 BGR_130527_mapped_R2.fastq.gz -S BGR_130527.sam -x ../index_output --very-fast 
+       bowtie2 -1 BGR_130708_mapped_R1.fastq.gz -2 BGR_130708_mapped_R2.fastq.gz -S BGR_130708.sam -x ../index_output --very-fast 
+       ```
 
     -  In the next step we convert the .sam file to binary format (.bam).
 
     
-```
-    samtools view -Sb BGR_130305.sam > BGR_130305.bam
-samtools view -Sb BGR_130305.sam > BGR_130527.bam
-samtools view -Sb BGR_130305.sam > BGR_130708.bam
-```
+     ```
+     samtools view -Sb BGR_130305.sam > BGR_130305.bam
+     samtools view -Sb BGR_130305.sam > BGR_130527.bam
+     samtools view -Sb BGR_130305.sam > BGR_130708.bam
+     ```
+     
     -  at the end, we sorting the mapped reads for higher processing speed, analyzing, visualization, and so on.
 
     ```
@@ -64,12 +66,15 @@ samtools view -Sb BGR_130305.sam > BGR_130708.bam
     ```
     anvi-gen-contigs-database -f metagenomics/contigs.anvio.fa -o metagenomics/contigs.db -n biol217
     ```
+
     -  In the next step we could run hmm search on genes to see if the ORFs that were predicted by (anvi-gen-contigs-database) are similar to any known genes:
 
     ```
     anvi-run-hmms -c metagenomics/contigs.db --num-threads 4
     ```
-        -  To visualize the contigs database:
+
+    -  To visualize the contigs database:
+
 
 
 
