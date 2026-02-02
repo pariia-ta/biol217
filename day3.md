@@ -27,16 +27,18 @@ The steps that we followed:
 
  - Mapping Sequencing reads to check for contamination, incorrect binning, and so on.
      -  First, reformatting the fasta file into more efficient file:
-  ```
-  anvi-script-reformat-fasta final.contigs.fa -o reformatted_output.fasta --min-len 1000 --simplify-names --report-file final.contigs.reformatted.table
-  ```
+
+     ```
+     anvi-script-reformat-fasta final.contigs.fa -o reformatted_output.fasta --min-len 1000 --simplify-names --report-file final.contigs.reformatted.table
+     ```
+
      -  Second, we want to organize and index our contigs. wich makes the mapping process faster, using bowtie program:
 
-  ```
-  bowtie2-build reformatted_output.fasta index_output
-  ```
+     ```
+     bowtie2-build reformatted_output.fasta index_output
+     ```
 
-      -  Now, we mapping reads onto contigs with bowtie2 with the .sam result (Sequence Alignment Map)
+     -  Now, we mapping reads onto contigs with bowtie2 with the .sam result (Sequence Alignment Map)
 
 
        ```
