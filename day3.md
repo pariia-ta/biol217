@@ -76,6 +76,50 @@ The steps that we followed:
     ```
 
     -  To visualize the contigs database:
+    
+    For the visualization parts, mostly we connect to interactive web server, T do so: 
+    1. request computing resources
+   
+    ```
+    srun --pty --x11 --partition=interactive --nodes=1 --tasks-per-node=1 --cpus-per-task=1 --mem=10G --time=01:00:00 /bin/bash
+    ```
+
+    2. activate anvi'o environments
+
+     ```
+     module load gcc12-env/12.1.0
+     module load micromamba 2> /dev/null
+     micromamba activate $WORK/.micromamba/envs/00_anvio/
+     cd $WORK
+     ```
+
+     3. Then run my interactive command
+
+     ```
+     anvi-profile -i metagenomics/fastp_out/sample1_sorted.bam -c metagenomics/contigs.db -o metagenomics/fastp_out/sample1_profile/
+     ```
+
+     4. Then open the new tab on the terminal and using: 
+
+     ```
+     ssh -L localhost:8081:localhost:8081 suna246@caucluster.rz.uni-kiel.de
+     ```
+
+     The local host number should be based on the link that we get from the previous command on the first terminal tab (here:8081), and also now in this step the sunam number is the interactive local node (246, not 229)
+
+     5. at the end 
+
+     ```
+     ssh -L localhost:8081:localhost:8081 n246
+     ```
+
+     6. Now we can click on the http://127.0.0.1:8080/ like link and open the visualized data. 
+
+    ![contigs_visualization](contigs_visualization)
+
+    
+
+
 
 
 
