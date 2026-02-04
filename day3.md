@@ -117,7 +117,71 @@ The steps that we followed:
 
     ![contigs_visualization](contigs_visualization)
 
-    
+- Creating anvio's profile:
+
+To store read mapping results and detailed information about each nucleotide, using
+
+```
+anvi-profile -i 130305_sorted_output.bam -c ../contigs.db --output-dir sample1_profile/
+anvi-profile -i 130527_sorted_output.bam -c ../contigs.db --output-dir sample2_profile/
+anvi-profile -i 130708_sorted_output.bam -c ../contigs.db --output-dir sample3_profile/
+```
+
+Now we have three profile databases for each sample.
+anvi profile takes:
+. A mapped bam file
+. A contigs database (contigs.db)
+and generates a profile. which contains: 
+-coverage: (which organisms are more abundant in each sample)
+-detection: (If a genome is present in all samples)
+-SNVs (variation)
+
+- Merging all three sample profiles together:
+
+```
+anvi-merge sample1_profile/PROFILE.db sample2_profile/PROFILE.db sample3_profile/PROFILE.db -o merged_profiles -c ../contigs.db --enforce-hierarchical-clustering
+```
+
+- Binning Contigs into genomes:
+
+In this step, we use two tools for binning:
+1. MetaBAT2
+2. MaxBin2
+
+
+```
+anvi-cluster-contigs -p merged_profiles/PROFILE.db -c ../contigs.db -C METABAT2 --driver metabat2 --log-file metabat2.log --just-do-it
+anvi-summarize -p merged_profiles/PROFILE.db -c ../contigs.db -o SUMMARY_METABAT2 -C METABAT2
+```
+
+here, our result is a bin collection 0f 40, which we have it as a report METABAT2 file: 
+
+![METABAT2](METABAT2)
+
+
+```
+anvi-cluster-contigs -p merged_profiles/PROFILE.db -c ../contigs.db -C MAXBIN2 --driver maxbin2 --log-file maxbin2.log --just-do-it
+anvi-summarize -p merged_profiles/PROFILE.db -c ../contigs.db -o SUMMARY_MAXBIN2 -C MAXBIN2
+```
+
+![MaxBin2](MaxBin2)
+
+- Questions
+
+-How many archaea bins did you get from MetaBAT2?
+I got 3 archaea bins from MetaBAT2.
+
+-How many archaea bins did you get from Maxbin2?
+I got 1 archaea bin from MaxBin2.
+
+
+
+
+
+
+
+
+
 
 
 
