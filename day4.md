@@ -74,9 +74,9 @@ cp metagenomics/PROFILE.db metagenomics/PROFILE_refined.db
 Then go into the interactive session and use these commands below to work on my bins manually with anvio-refine:
 
 ```
-anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__14 -C METABAT2 
+anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__11 -C METABAT2 
+anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__39 -C METABAT2 
 anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__32 -C METABAT2 
-anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__34 -C METABAT2 
 
 ```
 
