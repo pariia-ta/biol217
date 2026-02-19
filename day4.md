@@ -44,8 +44,19 @@ In this step, again I entered the interactive session to open the link
 
  ```
  gunc run -i metagenomics/fastp_out/refine_archaea39/METABAT__39/METABAT__39-contigs.fa -r $WORK/databases/gunc/gunc_db_progenomes2.1.dmnd --out_dir metagenomics/fastp_out/gunc_out --detailed_output --threads 12
+
  ```
 
- 
+ Then I run this command to visualize my results in a plot:
+
+ ```
+ gunc plot -d gunc_out/diamond_output/METABAT__39-contigs.diamond.progenomes_2.1.out -g gunc_out/gene_calls/gene_counts.json --out_dir gunc_out 
+
+ ```
+
+ - Questions:
+  -Do you get ARCHAEA bins that are chimeric?
+
+ ![alt text](image-1.png)
 
 
