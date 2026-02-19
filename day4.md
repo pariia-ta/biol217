@@ -80,7 +80,14 @@ anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refi
 
 ```
 
-![alt text](<Screenshot from 2026-01-29 12-37-40 (1).png>)
+![alt text](<Screenshot from 2026-01-30 11-48-28.png>)
+
+
+![alt text](<Screenshot from 2026-01-30 11-49-42.png>)
+
+
+![alt text](<Screenshot from 2026-01-30 11-59-15.png>)
+
 
 - Questions
 -How much could you improve the quality of your ARCHAEA?
