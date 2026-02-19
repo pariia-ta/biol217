@@ -56,7 +56,47 @@ In this step, again I entered the interactive session to open the link
 
  - Questions:
   -Do you get ARCHAEA bins that are chimeric?
-
+  based on the GUNC results, The archaeal bin does not appear to be chimeric. The contamination portion is close to zero and the bin passes the GUNC quality check(TRUE). so the genome bin shows high taxonomic consistency and low evidence of contamination.
  ![alt text](image-1.png)
 
+ -What is chimeric bin?
+ A chimeric bin is a sequence that is made from genetic material which originating from different organisms or lineages. This usually happens when contigs from different species are mistakenly grouped together during genome binning.
 
+- Manual bin refinement
+As we know large metagenome assemblies result in hundreds of bins, we want to select some of the better ones for manual refinement like more than of 70% completeness.
+So I created a copy from original bin and work on it using:
+
+```
+cp metagenomics/PROFILE.db metagenomics/PROFILE_refined.db
+
+```
+
+Then go into the interactive session and use these commands below to work on my bins manually with anvio-refine:
+
+```
+anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__14 -C METABAT2 
+anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__32 -C METABAT2 
+anvi-refine -c $WORK/metagenomics/anvi_contigs/contigs.db -p refine/PROFILE_refined.db --bin-id METABAT__34 -C METABAT2 
+
+```
+
+![alt text](<Screenshot from 2026-01-29 12-37-40 (1).png>)
+
+- Questions
+-How much could you improve the quality of your ARCHAEA?
+I couldn't improve the quality of non of them.
+
+- Visualizing
+
+```
+
+anvi-interactive -p refine/PROFILE_refined.db -c $WORK/metagenomics/anvi_contigs/contigs.db -C METABAT2
+```
+
+![alt text](<Screenshot from 2026-01-29 12-37-40 (1)-2.png>)
+
+- Questions
+-How abundant (relatively) are the Archaea bins (bin 34) in the 3 samples?
+BGR_130305: 8.11
+BGR_130527: 5.29
+BGR_130708: 3.52
