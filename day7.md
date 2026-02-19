@@ -122,3 +122,4 @@ anvi-estimate-genome-completeness -e external-genomes-final.txt -o genome_comple
 
 ```
 
+![alt text](image-8.png)
