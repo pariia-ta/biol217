@@ -34,7 +34,7 @@ METABAT__32: Methanosarcina flavescens (low quality)
 -Does the HIGH-QUALITY assignment of the bin need revision?
 No, because the genome is almost complete, the taxonomy is coherent, the markers agree.
 
-- Genome dereplication(BONUS):
+## Genome dereplication(BONUS):
 
 First I made the table, then use the following command:
 
@@ -45,7 +45,9 @@ anvi-dereplicate-genomes -i dereplicate.csv --program fastANI --similarity-thres
 
 ![alt text](image-2.png)
 
-- Questions: 
+- Questions:
+
+
 -How many species do you have in the dataset?
 based on the dereplication results, there are 40 clusters, and each cluster contains only one genome.
 This means that none of the genomes were similar enough to be grouped together. Therefore, the dataset contains 40 species at the chosen ANI threshold.
