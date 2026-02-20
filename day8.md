@@ -240,3 +240,11 @@ the RNA class size plot shows the distribution of reads across different RNA typ
 
 
 Before trimming, almost all reads had a length of 100 nt. After trimming, the read lengths became more variable, but most reads still remained close to 100 nt. This suggests that trimming removed only a small number of low-quality bases.
+
+## What Now?
+
+The most important files for further analysis lie in the methanosarcina_deseq folder. Here you can find the tables that show the results of the differential expression analysis (log2 FC, p-values etc.), for both the raw data (deseq_raw) and with annotations (deseq_with_annotations). The annotations are crucial, because without them we don't know which genes are actually differentially expressed.
+
+Think about what you could do with these results.
+
+-Using the DESeq output, we can detect which genes are significantly up- or down-regulated between the conditions. When the annotated tables are included, it becomes possible to understand the biological meaning of these changes, since the genes can be linked to their known functions. This makes it easier to group differentially expressed genes into functional categories or pathways and to perform enrichment analyses. In this way, the statistical results (such as log2 fold change and p-values) can be translated into biological insight about how Methanosarcina adapts to the tested condition.
