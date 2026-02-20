@@ -214,7 +214,29 @@ The volcano plot visualizes differential gene expression between mutant and wild
 
 - methanosarciana_viz_gene_quanti
 
+![alt text](methanosarcina_viz_gene_quanti_expressionscatterplots_1-4.png)
+
+![alt text](methanosarcina_viz_gene_quanti_expressionscatterplots_5-8.png)
+
+![alt text](Methanosarcina_viz_gene_quanti_expressionscatterplots_9-12.png)
+
+The expression scatter plots compare gene expression levels between different conditions. Ideally, most genes should show similar expression, so the data points are expected to lie close to the diagonal line and the correlation (R) value should be near 1. In our case, most points indeed follow the diagonal, indicating overall similar expression patterns. However, a few points deviate from the line, suggesting that some genes are differentially expressed between the conditions. Overall, the R values being close to 1 indicate good agreement between the samples.
+
+- RNA Class sizes
+
+![alt text](<Screenshot from 2026-02-04 14-33-17.png>)
+
+the RNA class size plot shows the distribution of reads across different RNA types in each sample. In all samples, CDS-associated reads represent the largest fraction, while rRNA and tRNA reads are present at lower levels. Importantly, the overall pattern is consistent between samples, suggesting no strong bias toward a specific RNA class in any single sample.
+
+- read_lengths_viz_align
+
+![alt text](read_lenghts_viz_align_input_mut.png)
+
+![alt text](read_lenght_viz_align_input_wt.png)
+
+![alt text](read_lenght_viz_align_processed_mut.png)
+
+![alt text](read_lenght_viz_align_processed_wt.png)
 
 
-
-
+Before trimming, almost all reads had a length of 100 nt. After trimming, the read lengths became more variable, but most reads still remained close to 100 nt. This suggests that trimming removed only a small number of low-quality bases.
