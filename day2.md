@@ -57,7 +57,8 @@ sbatch fastqc.sh
 4. Now, we have fastqc_out file which provides us a report of sequencing quality across all bases. the report shows that the read quality decreases toward the 3' end, suggesting the trimming of last bases.
 
 ### FastQC Per Base Quality Plot
-![FastQC per base quality](per_base_quality)
+
+![alt text](image-9.png)
 
 ### Preprocess the raw sequencing reads with Fastp
 1. again creating a script in VScode:
