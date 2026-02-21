@@ -58,7 +58,7 @@ sbatch fastqc.sh
 
 ### FastQC Per Base Quality Plot
 
-![alt text](image-9.png)
+![alt text](screencapture-file-C-Users-Hp-Downloads-report-4-html-2026-02-21-20_38_48.png)
 
 ### Preprocess the raw sequencing reads with Fastp
 1. again creating a script in VScode:
@@ -169,7 +169,8 @@ sbatch assembly.sh
 megahit_toolkit contig2fastg 99 final.contigs.fa > final.contigs.fastg
 ```
 6. Visualize the file (contigs) in Bandage
-![Assembly graph visualized in Bandage](bandage_graph)
+
+![alt text](<Screenshot from 2026-01-27 15-24-24 (1).png>)
 
 ### Question 
 Attach the figure you generated and explain briefly in your own words what you can see?
