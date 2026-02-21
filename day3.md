@@ -13,7 +13,8 @@ The steps that we followed:
  metaquast metagenomics/final.contigs.fa -o metagenomics/fastp_out/metaquast_out/ -t 6 -m 1000
  ```
  This command, results in report.html file which contains the info and quality of assembled contigs:
-  ![Quast report](Quast_report)
+  
+  ![alt text](screencapture-file-C-Users-Hp-Downloads-report-5-html-2026-02-21-21_02_55.png)
 
   ### Questions
   1. What is your N50 value? Why is this value relevant?
@@ -115,7 +116,7 @@ The steps that we followed:
 
      6. Now we can click on the http://127.0.0.1:8080/ like link and open the visualized data. 
 
-    ![contigs_visualization](contigs_visualization)
+    ![alt text](<Screenshot from 2026-01-28 15-30-49.png>)
 
 - Creating anvio's profile:
 

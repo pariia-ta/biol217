@@ -22,8 +22,8 @@ In this step, again I entered the interactive session to open the link
  anvi-interactive -p metagenomics/fastp_out/merged_profiles/PROFILE.db -c metagenomics/contigs.db -C METABAT2
  ```
 
- ![merged_profile](merged_profile)
-
+ ![alt text](<Screenshot from 2026-01-29 16-18-13 (1).png>)
+ 
  - Questions
 
  -Which binning strategy gives you the best quality for the archaea bins? 
